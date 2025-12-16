@@ -2,10 +2,7 @@ module github.com/xbasic/xbasic
 
 go 1.21
 
-require (
-	github.com/gdamore/tcell/v2 v2.7.4
-	github.com/rivo/tview v0.0.0-20241103174730-c76f7879f592
-)
+require github.com/gdamore/tcell/v2 v2.7.4
 
 require (
 	github.com/gdamore/encoding v1.0.0 // indirect

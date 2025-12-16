@@ -1,17 +1,15 @@
 # xBasic
 
-A QBasic-compatible interpreter for macOS and Linux, featuring a classic terminal-based IDE.
+A QBasic-compatible interpreter for macOS and Linux.
 
 ## Features
 
-- **Classic QBasic-style IDE** with blue background, menu bar, and function key shortcuts
 - **Core BASIC language support**: variables, arrays, control structures, subroutines
 - **40+ built-in functions**: string manipulation, math, date/time
 - **File I/O**: text and binary file operations
 - **PRINT USING**: formatted numeric output
 - **Graphics**: PSET, LINE, CIRCLE using Unicode block characters
 - **Cross-platform**: works on macOS and Linux
-- **Direct run mode**: execute .bas files from command line
 
 ## Quick Start
 
@@ -27,35 +25,11 @@ Or build manually:
 go build -o xbasic ./cmd/xbasic
 ```
 
-### Run the IDE
-
-```bash
-./xbasic
-```
-
-### Run a BASIC file directly
-
-```bash
-./xbasic -run program.bas
-```
-
-### Open a file in the IDE
+### Run a BASIC program
 
 ```bash
 ./xbasic program.bas
 ```
-
-## IDE Keyboard Shortcuts
-
-| Key | Action |
-|-----|--------|
-| F5 | Run program |
-| F4 | Toggle output panel |
-| F10 | Activate menu |
-| Ctrl+S | Save file |
-| Ctrl+O | Open file |
-| Ctrl+N | New file |
-| Ctrl+Q | Exit |
 
 ## Language Features
 
@@ -244,17 +218,11 @@ xBasic/
 │   ├── ast/                # Abstract Syntax Tree nodes
 │   ├── interpreter/        # Tree-walking interpreter
 │   ├── builtins/           # Built-in functions
-│   ├── editor/             # Terminal IDE (tview)
 │   └── screen/             # Screen/display handling
 ├── examples/               # Sample BASIC programs
 ├── Makefile
 └── README.md
 ```
-
-## Dependencies
-
-- [tcell](https://github.com/gdamore/tcell) - Terminal handling
-- [tview](https://github.com/rivo/tview) - Terminal UI widgets
 
 ## License
 
