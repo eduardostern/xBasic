@@ -86,6 +86,14 @@ func (i *Interpreter) Run() error {
 	i.state.Running = true
 	i.state.ProgramCounter = 0
 
+	// Initialize stdin as file handle 0
+	i.files[0] = &FileHandle{
+		Name:   "STDIN",
+		Mode:   "INPUT",
+		File:   os.Stdin,
+		Reader: bufio.NewReader(os.Stdin),
+	}
+
 	for i.state.Running && i.state.ProgramCounter < len(i.program.Statements) {
 		stmt := i.program.Statements[i.state.ProgramCounter]
 		err := i.executeStatement(stmt)
