@@ -25,6 +25,24 @@ func New(input string) *Lexer {
 		lineStart: true,
 	}
 	l.readChar()
+
+	// Skip shebang line if present (e.g., #!/usr/local/bin/xbasic)
+	if l.ch == '#' && l.peekChar() == '!' {
+		for l.ch != '\n' && l.ch != '\r' && l.ch != 0 {
+			l.readChar()
+		}
+		// Skip the newline
+		if l.ch == '\r' {
+			l.readChar()
+		}
+		if l.ch == '\n' {
+			l.readChar()
+		}
+		l.line = 1
+		l.column = 1
+		l.lineStart = true
+	}
+
 	return l
 }
 

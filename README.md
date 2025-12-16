@@ -31,6 +31,28 @@ go build -o xbasic ./cmd/xbasic
 ./xbasic program.bas
 ```
 
+### Run as a script (Unix)
+
+Install xbasic to `/usr/local/bin`:
+
+```bash
+sudo cp xbasic /usr/local/bin/
+```
+
+Add a shebang to your BASIC file:
+
+```basic
+#!/usr/local/bin/xbasic
+PRINT "Hello, World!"
+```
+
+Make it executable and run directly:
+
+```bash
+chmod +x hello.bas
+./hello.bas
+```
+
 ## Language Features
 
 ### Data Types
